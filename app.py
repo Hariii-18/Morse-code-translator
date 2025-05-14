@@ -54,15 +54,20 @@ def about():
 def history():
     return render_template('history.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
+
 @app.route('/translate', methods=['POST'])
 def translate():
     data = request.get_json()
     text = data.get('text', '')
     result = auto_translate(text)
     return jsonify({'result': result})
-@app.route('/signup')
-def signup():
-    return render_template('signup.html')
 
 
 if __name__ == '__main__':

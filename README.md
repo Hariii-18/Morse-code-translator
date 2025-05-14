@@ -20,7 +20,7 @@ A web-based Morse Code Translator built using Python (Flask) that allows users t
 
 ## Installation
 
-1. *Clone the repository*
+ *Clone the repository*
    ```bash
    git clone https://github.com/YOUR_USERNAME/morse-code-translator.git
    cd morse-code-translator
