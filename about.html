@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>About | MorseCodeX</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    :root {
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --card-bg: #ffffff;
+      --output-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --gradient-bg: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    }
+
+    body.dark-mode {
+      --bg: #000000;
+      --text: #f3f4f6;
+      --card-bg: #2e2e48;
+      --output-bg: #3e3e5e;
+      --border: #4e4e6e;
+      --primary: #6C63FF;
+      --primary-hover: #574b90;
+      --gradient-bg: linear-gradient(135deg, #2e2e48, #1e1e2f);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html,
+    body {
+      background: var(--gradient-bg);
+      color: var(--text);
+      height: 100%;
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-links li a:hover {
+      background-color: #ffffff;
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p,
+    li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    .feature-list {
+      margin-top: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">MorseCodeX</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/history">History</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/signup" class="auth-btn">Sign Up | Login</a></li>
+      <li>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <span id="themeIcon">🌤️</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>About MorseCodeX</h1>
+    <p><strong>MorseCodeX</strong> is a real-time Morse Code Translator built to convert between English text and Morse
+      code seamlessly. It offers a user-friendly interface and is packed with useful features for learners, hobbyists,
+      and enthusiasts of Morse communication.</p>
+
+    <div class="feature-list">
+      <h2>Key Features:</h2>
+      <ul>
+        <li><strong>Real-time Translation:</strong> Convert instantly between English and Morse code.</li>
+        <li><strong>Copy to Clipboard:</strong> One-click copying of translated text or Morse output.</li>
+        <li><strong>Translation History:</strong> View and manage past translations right from your browser (stored
+          locally).</li>
+        <li><strong>Clear History:</strong> Remove saved translation history when needed.</li>
+        <li><strong>Audio Playback:</strong> Hear the Morse code beeps or have the translated text read aloud.</li>
+        <li><strong>Dark Mode:</strong> Switch between light and dark themes for comfortable viewing anytime.</li>
+      </ul>
+    </div>
+
+    <p>This tool was built using HTML, CSS, JavaScript, and Python Flask as the backend for processing translations.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 MorseCodeX. All rights reserved.
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const isDark = body.classList.toggle('dark-mode');
+      const icon = document.getElementById('themeIcon');
+      icon.textContent = isDark ? '🌙' : '🌤️';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    window.onload = function () {
+      const savedTheme = localStorage.getItem('theme');
+      const isDark = savedTheme === 'dark';
+      document.body.classList.toggle('dark-mode', isDark);
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.textContent = isDark ? '🌙' : '🌤️';
+    }
+  </script>
+</body>
+
+</html>
