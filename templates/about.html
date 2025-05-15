@@ -4,124 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>About | MorseCodeX</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-
-    :root {
-      --bg: #f9fafb;
-      --text: #1f2937;
-      --card-bg: #ffffff;
-      --output-bg: #f3f4f6;
-      --border: #e5e7eb;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-      --gradient-bg: linear-gradient(135deg, #74ebd5, #ACB6E5);
-    }
-
-    body.dark-mode {
-      --bg: #000000;
-      --text: #f3f4f6;
-      --card-bg: #2e2e48;
-      --output-bg: #3e3e5e;
-      --border: #4e4e6e;
-      --primary: #6C63FF;
-      --primary-hover: #574b90;
-      --gradient-bg: linear-gradient(135deg, #2e2e48, #1e1e2f);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    html,
-    body {
-      background: var(--gradient-bg);
-      color: var(--text);
-      height: 100%;
-      overflow-x: hidden;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .navbar {
-      background-color: #1e1e2f;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Segoe UI', sans-serif;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      width: 100%;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .nav-links li a:hover {
-      background-color: #ffffff;
-      color: black;
-      transform: translateY(-2px);
-    }
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    .container {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    p,
-    li {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    .feature-list {
-      margin-top: 1.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      width: 100%;
-    }
-  </style>
+    <link rel="stylesheet" href="/static/style.css" />
 </head>
 
 <body>
@@ -133,7 +16,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="/history">History</a></li>
       <li><a href="/about">About</a></li>
-      <li><a href="/login" class="auth-btn">Login</a></li>
+      <li><a href="/signup" class="auth-btn">Login</a></li>
       <li>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
           <span id="themeIcon">🌤️</span>

@@ -7,120 +7,6 @@
   <title>Auth UI</title>
   <link rel="stylesheet" href="/static/style.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
-
-    :root {
-      --bg: #f9fafb;
-      --text: #1f2937;
-      --card-bg: #ffffff;
-      --output-bg: #f3f4f6;
-      --border: #e5e7eb;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-      --gradient-bg: linear-gradient(135deg, #74ebd5, #ACB6E5);
-    }
-
-    body.dark {
-
-      --bg: #000000;
-      --text: #f3f4f6;
-      --card-bg: #2e2e48;
-      --output-bg: #3e3e5e;
-      --border: #4e4e6e;
-      --primary: #6C63FF;
-      --primary-hover: #574b90;
-      --gradient-bg: linear-gradient(135deg, #2e2e48, #1e1e2f);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      max-width: 100%;
-      overflow-x: hidden;
-      background-color: var(--bg);
-      background: var(--gradient-bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .navbar {
-      background-color: #1e1e2f;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Segoe UI', sans-serif;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      width: 100%;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .nav-links li a:hover {
-      background-color: #ffffff;
-      color: black;
-      transform: translateY(-2px);
-    }
-
-
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    :root {
-      --bg: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      --text: #1f2937;
-      --card-bg: #ffffff;
-      --output-bg: #f3f4f6;
-      --border: #e5e7eb;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
     .container {
       background: var(--card-bg);
       padding: 2rem;
@@ -128,70 +14,6 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       width: 350px;
       transition: background 0.3s;
-    }
-
-    .toggle-btns {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-    }
-
-    .toggle-btns button {
-      flex: 1;
-      padding: 0.5rem;
-      border: none;
-      background: #eee;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .toggle-btns .active {
-      background: var(--primary);
-      color: white;
-    }
-
-    .form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form.hidden {
-      display: none;
-    }
-
-    .form h2 {
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .form input {
-      margin: 0.5rem 0;
-      padding: 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 0.5rem;
-      background-color: var(--output-bg);
-      color: var(--text);
-    }
-
-    .form button {
-      padding: 0.7rem;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .form button:hover {
-      background: var(--primary-hover);
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      background: none;
-      width: 100%;
     }
   </style>
 </head>
@@ -201,7 +23,7 @@
   <nav class="navbar">
     <div class="logo">MorseCodeX</div>
     <ul class="nav-links">
-          <li><a href="/">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="/history">History</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/login">login</a></li>
@@ -226,7 +48,6 @@
       <p>Do not have an account? <a href="/signup">Create Account</a></p>
     </div>
   </div>
-  <script src="script.js"></script>
 </body>
 
 </html>
@@ -236,47 +57,7 @@
   &copy; 2025 MorseCodeX. All rights reserved.
 </footer>
 
-<script>
-  document.getElementById('loginForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    // Handle login logic here
-  });
-
-
-  const loginBtn = document.getElementById('loginBtn');
-  const signupBtn = document.getElementById('signupBtn');
-  const loginForm = document.getElementById('loginForm');
-  const signupForm = document.getElementById('signupForm');
-  const themeIcon = document.getElementById('themeIcon');
-
-  loginBtn.addEventListener('click', () => {
-    loginForm.classList.remove('hidden');
-    signupForm.classList.add('hidden');
-    loginBtn.classList.add('active');
-    signupBtn.classList.remove('active');
-  });
-
-  signupBtn.addEventListener('click', () => {
-    signupForm.classList.remove('hidden');
-    loginForm.classList.add('hidden');
-    signupBtn.classList.add('active');
-    loginBtn.classList.remove('active');
-  });
-
-  function toggleTheme() {
-    const isDark = document.body.classList.toggle('dark');
-    themeIcon.textContent = isDark ? '🌙' : '🌤️';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }
-
-  // Apply saved theme on load
-  window.onload = function () {
-    const savedTheme = localStorage.getItem('theme');
-    const isDark = savedTheme === 'dark';
-    document.body.classList.toggle('dark', isDark);
-    themeIcon.textContent = isDark ? '🌙' : '🌤️';
-  }
-</script>
 </body>
 
 </html>
+<script src="/static/script.js"></script>

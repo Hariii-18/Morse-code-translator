@@ -15,14 +15,14 @@ body {
   overflow-x: hidden;
 }
 
-body {
+/* body {
   font-family: 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--text);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+} */
 
 main {
   flex: 1;
@@ -155,14 +155,16 @@ ul#historyList {
   padding-left: 20px;
   max-height: 150px;
   overflow-y: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--output-bg);
 }
 
 ul#historyList li {
-  margin-bottom: 6px;
-  padding: 6px;
+  /* margin-bottom: 6px;
+  padding: 6px; */
   border-bottom: 1px solid var(--border);
   font-size: 14px;
 }
@@ -248,4 +250,172 @@ footer {
   text-align: center;
   padding: 10px 0;
   width: 100%;
+}
+
+/* THIS IS FOR ABOUT PAGE */
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p,
+li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+.feature-list {
+  margin-top: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+/* THIS CODE IS OF LOGIN PAGE*/
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.toggle-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.toggle-btns button {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-btns .active {
+  background: var(--primary);
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form.hidden {
+  display: none;
+}
+
+.form h2 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.form input {
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background-color: var(--output-bg);
+  color: var(--text);
+}
+
+.form button {
+  padding: 0.7rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background: var(--primary-hover);
+}
+
+/* history clear seperate delete button */
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+/* buttons styling */
+button {
+  margin: 5px 0;
+  padding: 6px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*  history page buttons styling */
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.history-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.history-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.history-actions button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+ul#historyList {
+  max-height: 350px;
+  overflow-y: auto;
+  padding-left: 20px;
 }

@@ -15,7 +15,7 @@
     <ul class="nav-links">
       <li><a href="/history">History</a></li>
       <li><a href="/about">About</a></li>
-      <li><a href="/login" class="auth-btn">login</a></li>
+      <li><a href="/login">login</a></li>
 
       <li>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
@@ -35,6 +35,7 @@
     <div>
       <button onclick="translateText()">Translate</button>
       <button onclick="playCurrentMorse()">Play Audio</button>
+      <button id="stopButton" onclick="stopAudio()" style="display: none;">Stop</button>
       <button onclick="copyToClipboard()">Copy</button>
       <button onclick="clearHistory()">Clear History</button>
     </div>
