@@ -179,7 +179,7 @@ function stopAudio() {
     scheduledStops.forEach(obj => {
       try {
         if (typeof obj.stop === 'function') obj.stop();
-      } catch (e) {}
+      } catch (e) { }
     });
     audioContext.close();
     audioContext = null;
@@ -229,3 +229,15 @@ window.onload = function () {
   loadHistory();
 };
 
+// responsive navbar hamburger option
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+
+  // Ensure display is properly handled
+  if (navLinks.classList.contains('active')) {
+    navLinks.style.display = "flex";
+  } else {
+    navLinks.style.display = "none";
+  }
+}

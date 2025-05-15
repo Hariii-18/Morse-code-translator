@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -6,17 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MorseCodeX</title>
   <link rel="stylesheet" href="/static/style.css" />
+  <style>
+
+  </style>
 </head>
 
 <body>
-  <!-- Navigation Bar -->
+
   <nav class="navbar">
     <div class="logo">MorseCodeX</div>
-    <ul class="nav-links">
-      <li><a href="/history">History</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/login">login</a></li>
 
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="/history">history</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/login">Login</a></li>
       <li>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
           <span id="themeIcon">🌤️</span>
@@ -29,6 +39,7 @@
     <div class="header">
       <h1>Morse Code Translator</h1>
     </div>
+
 
     <textarea id="textInput" rows="4" placeholder="Enter text or Morse code (use . and -)"></textarea>
 
@@ -44,13 +55,14 @@
 
     <h3>Translation History</h3>
     <ul id="historyList"></ul>
+
   </div>
 
   <footer>
     &copy; 2025 MorseCodeX. All rights reserved.
   </footer>
-
   <script src="/static/script.js"></script>
+
 </body>
 
 </html>

@@ -3,20 +3,33 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | MorseCodeX</title>
-    <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+  <meta name="description"
+    content="Learn more about MorseCodeX, a real-time Morse Code translator with audio, history, and dark mode features.">
+  <style>
+
+  </style>
 </head>
 
 <body>
-
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">MorseCodeX</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
-      <li><a href="/history">History</a></li>
+      <li><a href="/history">history</a></li>
       <li><a href="/about">About</a></li>
-      <li><a href="/signup" class="auth-btn">Login</a></li>
+      <li><a href="/login">Login</a></li>
       <li>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
           <span id="themeIcon">🌤️</span>
@@ -26,50 +39,85 @@
   </nav>
 
   <!-- Main Content -->
-  <div class="container">
-    <h1>About MorseCodeX</h1>
-    <p><strong>MorseCodeX</strong> is a real-time Morse Code Translator built to convert between English text and Morse
-      code seamlessly. It offers a user-friendly interface and is packed with useful features for learners, hobbyists,
-      and enthusiasts of Morse communication.</p>
+  <main class="container fade-in">
+    <section class="about">
+      <h1>About MorseCodeX</h1>
+      <!-- <img src="/static/images/morse-illustration.jpg" alt="Illustration of Morse Code translation" class="about-image"> -->
 
-    <div class="feature-list">
-      <h2>Key Features:</h2>
-      <ul>
-        <li><strong>Real-time Translation:</strong> Convert instantly between English and Morse code.</li>
-        <li><strong>Copy to Clipboard:</strong> One-click copying of translated text or Morse output.</li>
-        <li><strong>Translation History:</strong> View and manage past translations right from your browser (stored
-          locally).</li>
-        <li><strong>Clear History:</strong> Remove saved translation history when needed.</li>
-        <li><strong>Audio Playback:</strong> Hear the Morse code beeps or have the translated text read aloud.</li>
-        <li><strong>Dark Mode:</strong> Switch between light and dark themes for comfortable viewing anytime.</li>
+      <p><strong>MorseCodeX</strong> is a powerful and user-friendly Morse Code translator that enables seamless
+        conversion between English text and Morse code. Designed for learners, hobbyists, and communication enthusiasts,
+        it brings simplicity and functionality together in a modern web app experience.</p>
+
+      <h2>Key Features</h2>
+      <ul class="feature-list">
+        <li><strong>Real-time Translation:</strong> Convert instantly between English and Morse code with intuitive
+          feedback.</li>
+        <li><strong>Copy to Clipboard:</strong> Easily copy translated Morse or English text with a single click.</li>
+        <li><strong>Translation History:</strong> Access and manage your past translations with browser-based storage.
+        </li>
+        <li><strong>Clear History:</strong> Clean up saved records anytime to start fresh.</li>
+        <li><strong>Audio Playback:</strong> Listen to Morse code beeps or have the English translation read aloud.</li>
+        <li><strong>Dark Mode:</strong> Toggle between light and dark themes to suit your preference and environment.
+        </li>
       </ul>
-    </div>
 
-    <p>This tool was built using HTML, CSS, JavaScript, and Python Flask as the backend for processing translations.</p>
-  </div>
+      <p class="tech-stack">This application is built using <strong>HTML</strong>, <strong>CSS</strong>,
+        <strong>JavaScript</strong>, and powered by <strong>Python Flask</strong> on the backend.
+      </p>
+
+      <h2>Our Mission</h2>
+      <p>At MorseCodeX, our mission is to make Morse code learning accessible, intuitive, and enjoyable for everyone.
+        Whether you're exploring Morse as a hobby, studying it for academic purposes, or using it in professional
+        communications, our goal is to provide a reliable and enriching experience.</p>
+
+      <h2>Why Choose MorseCodeX?</h2>
+      <ul>
+        <li><strong>Accessibility First:</strong> The platform is designed with accessibility in mind to support users
+          of all backgrounds and abilities.</li>
+        <li><strong>No Account Required:</strong> Use the translator without signing up. For enhanced features, optional
+          account creation is available.</li>
+        <li><strong>Cross-Platform Compatibility:</strong> Works flawlessly on desktops, tablets, and mobile devices.
+        </li>
+        <li><strong>Privacy Focused:</strong> User history is stored locally unless logged in. Your data stays with you.
+        </li>
+        <li><strong>Continuous Updates:</strong> We're committed to delivering frequent updates and new features based
+          on user feedback.</li>
+      </ul>
+
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        "MorseCodeX made learning Morse code fun and practical! The audio playback and real-time translation are
+        game-changers."
+        <div class="testimonial-author">— Sarah B., Communications Student</div>
+      </div>
+      <div class="testimonial">
+        "I use MorseCodeX to teach scouts basic code skills. It's intuitive, reliable, and works great on all our
+        devices."
+        <div class="testimonial-author">— Mark T., Scout Leader</div>
+      </div>
+      <div class="testimonial">
+        "Clean design, fast response, and exactly what I needed for my radio hobby. Highly recommended."
+        <div class="testimonial-author">— Angela R., Amateur Radio Operator</div>
+      </div>
+
+      <h2>Meet the Developer</h2>
+      <p><strong>J.Hari prasad</strong> is the creator behind MorseCodeX, a passionate developer with a background in
+        full stack web development and a keen interest in communication technologies. This project is a result of
+        combining technical skills with a desire to simplify Morse code usage in the digital age.</p>
+
+      <h2>Contact Us</h2>
+      <p>Have questions, suggestions, or feedback? We'd love to hear from you. Reach out at <a
+          href="mailto:support@morsecodex.com">@morsecodex.com</a> or follow us on our social media platforms to stay
+        updated with the latest news.</p>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 MorseCodeX. All rights reserved.
+    <div class="footer-container">
+      <p>&copy; 2025 MorseCodeX. All rights reserved.</p>
+    </div>
   </footer>
-
-  <!-- Theme Toggle Script -->
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const isDark = body.classList.toggle('dark-mode');
-      const icon = document.getElementById('themeIcon');
-      icon.textContent = isDark ? '🌙' : '🌤️';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
-
-    window.onload = function () {
-      const savedTheme = localStorage.getItem('theme');
-      const isDark = savedTheme === 'dark';
-      document.body.classList.toggle('dark-mode', isDark);
-      const icon = document.getElementById('themeIcon');
-      if (icon) icon.textContent = isDark ? '🌙' : '🌤️';
-    }
-  </script>
+  <script src="/static/script.js"></script>
 </body>
 
 </html>
