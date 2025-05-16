@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -7,13 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MorseCodeX</title>
   <link rel="stylesheet" href="/static/style.css" />
-  <style>
-
-  </style>
 </head>
 
 <body>
-
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">MorseCodeX</div>
 
@@ -24,9 +20,8 @@
     </div>
 
     <ul class="nav-links">
-      <li><a href="/history">history</a></li>
+      <li><a href="/history">History</a></li>
       <li><a href="/about">About</a></li>
-      <li><a href="/login">Login</a></li>
       <li>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
           <span id="themeIcon">🌤️</span>
@@ -35,15 +30,15 @@
     </ul>
   </nav>
 
+  <!-- Main Content -->
   <div class="container">
     <div class="header">
       <h1>Morse Code Translator</h1>
     </div>
 
-
     <textarea id="textInput" rows="4" placeholder="Enter text or Morse code (use . and -)"></textarea>
 
-    <div>
+    <div class="button-group">
       <button onclick="translateText()">Translate</button>
       <button onclick="playCurrentMorse()">Play Audio</button>
       <button id="stopButton" onclick="stopAudio()" style="display: none;">Stop</button>
@@ -51,18 +46,26 @@
       <button onclick="clearHistory()">Clear History</button>
     </div>
 
-    <div id="output" placeholder="Translation will appear here..."></div>
+    <div id="output" class="output-box"></div>
 
     <h3>Translation History</h3>
     <ul id="historyList"></ul>
-
   </div>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 MorseCodeX. All rights reserved.
   </footer>
-  <script src="/static/script.js"></script>
 
+  <script src="/static/script.js"></script>
+  <script>
+    // responsive navbar
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+      navLinks.style.display = navLinks.classList.contains('active') ? "flex" : "none";
+    }
+  </script>
 </body>
 
 </html>

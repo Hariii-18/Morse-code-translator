@@ -32,7 +32,7 @@ function translateText() {
 
 // COPY TO CLIPBOARD
 function copyToClipboard() {
-  const output = document.getElementById('output')?.innerText;
+  const output = document.getElementById('output')?.innerText?.trim();
   if (!output) return;
 
   navigator.clipboard.writeText(output)
@@ -51,7 +51,12 @@ function updateHistory(input, result) {
   }
 
   let history = JSON.parse(localStorage.getItem('translationHistory')) || [];
+
+  // Prevent duplicates and limit to 50 items
+  history = history.filter(item => item !== itemText);
   history.unshift(itemText);
+  history = history.slice(0, 50);
+
   localStorage.setItem('translationHistory', JSON.stringify(history));
 }
 
@@ -66,6 +71,7 @@ function createHistoryItem(text) {
   const delBtn = document.createElement('button');
   delBtn.textContent = 'delete';
   delBtn.className = 'delete-button';
+  delBtn.setAttribute('aria-label', 'Delete this history entry');
   delBtn.onclick = function () {
     li.remove();
     deleteHistoryItem(text);
@@ -106,7 +112,7 @@ function clearHistory() {
 
 // PLAY MORSE
 function playMorse(morse) {
-  stopAudio(); // Clear any previous audio
+  stopAudio(); // Clear previous audio
 
   const dotDuration = 100;
   const dashDuration = dotDuration * 3;
@@ -115,7 +121,13 @@ function playMorse(morse) {
   isPlaying = true;
   document.getElementById('stopButton').style.display = 'inline';
 
-  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  try {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  } catch (err) {
+    alert("Audio playback is not supported or blocked by the browser.");
+    return;
+  }
+
   let time = audioContext.currentTime;
 
   function scheduleBeep(duration) {
@@ -143,18 +155,14 @@ function playMorse(morse) {
   }
 
   const hideButtonDelay = (time - audioContext.currentTime) * 1000;
-  const timeoutId = setTimeout(() => {
-    stopAudio();
-  }, hideButtonDelay);
+  const timeoutId = setTimeout(() => stopAudio(), hideButtonDelay);
   scheduledStops.push({ stop: () => clearTimeout(timeoutId) });
 }
 
 // PLAY TEXT or MORSE
 function playCurrentMorse() {
-  const output = document.getElementById('output')?.innerText.trim();
-  if (!output) return;
-
-  if (isPlaying) return;
+  const output = document.getElementById('output')?.innerText?.trim();
+  if (!output || isPlaying) return;
 
   if (currentMode === 'morse') {
     playMorse(output);
@@ -179,7 +187,7 @@ function stopAudio() {
     scheduledStops.forEach(obj => {
       try {
         if (typeof obj.stop === 'function') obj.stop();
-      } catch (e) { }
+      } catch (e) {}
     });
     audioContext.close();
     audioContext = null;
@@ -193,8 +201,7 @@ function stopAudio() {
   document.getElementById('stopButton').style.display = 'none';
 }
 
-
-// copy history button in history page
+// COPY ENTIRE HISTORY
 function copyAllHistory() {
   const history = JSON.parse(localStorage.getItem('translationHistory')) || [];
   if (history.length === 0) {

@@ -1,4 +1,3 @@
-/* Reset some default styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 * {
@@ -15,22 +14,33 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 main {
   flex: 1;
 }
 
-/* Navbar container */
+/* Navbar */
 .navbar {
+  position: fixed;
   background-color: #1e1e2f;
   color: white;
   padding: 10px 20px;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   width: 100%;
+  z-index: 1000;
 }
 
 .logo {
@@ -59,11 +69,18 @@ main {
 }
 
 .theme-toggle {
-  background: none;
+  background: transparent;
   border: none;
-  color: white;
-  font-size: 1.2rem;
+  font-size: 24px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
 }
 
 /* CSS Variables */
@@ -87,6 +104,7 @@ body.dark-mode {
   --primary-hover: #000000;
 }
 
+/* Main Container */
 .container {
   max-width: 600px;
   width: 100%;
@@ -94,6 +112,7 @@ body.dark-mode {
   border-radius: 16px;
   transition: all 0.3s ease-in-out;
   margin: 20px auto;
+  padding-top: 50px;
 }
 
 h1 {
@@ -102,6 +121,7 @@ h1 {
   width: 100%;
 }
 
+/* Textareas & Output */
 textarea,
 #output {
   width: 100%;
@@ -119,6 +139,7 @@ textarea,
   min-height: 60px;
 }
 
+/* Buttons */
 button {
   background-color: var(--primary);
   color: white;
@@ -141,10 +162,11 @@ body.dark-mode button:hover {
   color: black;
 }
 
+/* Translation History */
 ul#historyList {
   margin-top: 15px;
   padding-left: 20px;
-  max-height: 150px;
+  max-height: 350px;
   overflow-y: auto;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -154,26 +176,11 @@ ul#historyList {
 }
 
 ul#historyList li {
-  /* margin-bottom: 6px;
-  padding: 6px; */
   border-bottom: 1px solid var(--border);
   font-size: 14px;
 }
 
-.theme-toggle {
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  padding: 0;
-  margin: 0;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.2);
-}
-
+/* Toggle Switch */
 .toggle-wrapper {
   margin-top: 20px;
   display: flex;
@@ -230,38 +237,16 @@ input:checked+.slider:before {
   font-size: 14px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
+/* Footer */
 footer {
   text-align: center;
   padding: 10px 0;
   width: 100%;
 }
 
-/* THIS IS FOR ABOUT PAGE */
-
-.theme-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.container {
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 1rem;
+/* About Page */
+.about {
+  padding-top: 20px;
 }
 
 p,
@@ -278,27 +263,7 @@ ul {
   margin-top: 1.5rem;
 }
 
-footer {
-  text-align: center;
-  padding: 10px 0;
-  width: 100%;
-}
-
-/* THIS CODE IS OF LOGIN PAGE*/
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
+/* Login Page */
 .toggle-btns {
   display: flex;
   justify-content: space-between;
@@ -356,7 +321,7 @@ body {
   background: var(--primary-hover);
 }
 
-/* history clear seperate delete button */
+/* Individual History Item */
 .history-item {
   display: flex;
   justify-content: space-between;
@@ -371,16 +336,7 @@ body {
   font-size: 10px;
 }
 
-/* buttons styling */
-button {
-  margin: 5px 0;
-  padding: 6px 12px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-/*  history page buttons styling */
-
+/* History Header */
 .history-header {
   display: flex;
   justify-content: space-between;
@@ -405,87 +361,9 @@ button {
   cursor: pointer;
 }
 
-ul#historyList {
-  max-height: 350px;
-  overflow-y: auto;
-  padding-left: 20px;
-}
+/* About Page Animations */
 
-/* code for responsive UI */
-/* Hamburger menu (hidden on large screens) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 4px 0;
-  transition: 0.4s;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-/* container responsiveness */
-@media (max-width: 600px) {
-  .container {
-    padding: 15px;
-  }
-
-  textarea,
-  #output {
-    font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-}
-
-/* input/forms/trxt areas responsiveness */
-@media (max-width: 480px) {
-
-  .form input,
-  .form button,
-  textarea,
-  #output {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-
-  .toggle-btns button {
-    font-size: 0.9rem;
-    padding: 0.4rem;
-  }
-}
-
-/*  css for about page animations*/
+/* Light mode (default) */
 .testimonial {
   border-left: 5px solid #3498db;
   background: #f9f9f9;
@@ -493,26 +371,32 @@ ul#historyList {
   margin: 1.5em 0;
   font-style: italic;
   border-radius: 8px;
+  color: #000;
+  /* text color for light mode */
 }
 
 .testimonial-author {
   margin-top: 0.5em;
   font-weight: bold;
   text-align: right;
+  color: #000;
+  /* text color for light mode */
 }
 
-.about-image {
-  width: 100%;
-  max-width: 600px;
-  display: block;
-  margin: 2em auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Dark mode */
+.dark-mode .testimonial {
+  background: #000;
+  color: #fff;
+  border-left: 5px solid #3498db;
 }
 
-.fade-in {
+.dark-mode .testimonial-author {
+  color: #fff;
+}
+
+/* .fade-in {
   animation: fadeIn 1.5s ease-in-out;
-}
+} */
 
 @keyframes fadeIn {
   from {
@@ -526,8 +410,7 @@ ul#historyList {
   }
 }
 
-/* for navbar responsiveness */
-/* Simplified responsive navbar styling */
+/* Responsive Navbar (Mobile) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -550,14 +433,11 @@ ul#historyList {
     margin-top: 10px;
     gap: 10px;
     background-color: #1e1e2f;
-    /* Ensuring visibility */
     padding: 10px;
     position: absolute;
     top: 50px;
     left: 0;
-    width: 100%;
     z-index: 1000;
-
   }
 
   .nav-links.active {
@@ -565,10 +445,47 @@ ul#historyList {
   }
 
   .hamburger {
-    display: flex;
+    display: block;
     position: absolute;
     top: 15px;
     right: 15px;
+  }
+}
 
+/* Small Container */
+@media (max-width: 600px) {
+  .container {
+    padding: 45px;
+  }
+
+  textarea,
+  #output {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Small Forms */
+@media (max-width: 480px) {
+
+  .form input,
+  .form button,
+  textarea,
+  #output {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .toggle-btns button {
+    font-size: 0.9rem;
+    padding: 0.4rem;
   }
 }
